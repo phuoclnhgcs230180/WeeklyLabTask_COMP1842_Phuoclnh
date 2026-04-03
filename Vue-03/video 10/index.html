@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+  <div id="app">
+    <div class="student-watermark">
+    <h3>Vue 3 Video 10:</h3>
+    <ul>
+      <li v-for="name in StudentName" :key="name" class="highlight-name">{{ name }}</li>
+    </ul>
+  </div>
+    <div class="nav-bar"></div>
+    <div class="cart-count">Cart({{cart}})</div>
+    
+    <!-- Product Display Component -->
+    <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+    
+  </div>
+
+<!-- Lê Nguyễn Hữu Phước -->
+<!-- Video 10-->
+ 
+    <!-- Import Js -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/ProductDisplay.js"></script>
+
+    <script src="./components/ProductDetails.js"></script>
+
+    <!-- Mount App -->
+     <script>
+      const mountApp = App.mount('#app')
+    </script>
+
+  </body>
+</html>
+
