@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+  <div id="app">
+    <div class="student-watermark">
+    <h3>Vue 2 Video 6:</h3>
+    <ul>
+      <li v-for="name in StudentName" :key="name" class="highlight-name">{{ name }}</li>
+    </ul>
+  </div>
+    <div class="nav-bar"></div>
+
+    <div class="product-display">
+      <div class="product-container">
+        <div class="product-image">
+          <img v-bind:src="image">
+        </div>
+        <div class="product-info">
+          <h1>{{ product }}</h1>
+          <p v-if="instock">In Stock</p>
+          <p v-else>Out of Stock</p>
+          <ul>
+            <li v-for="detail in details">{{ detail }}</li>
+          </ul>
+<!-- Lê Nguyễn Hữu Phước -->
+<!-- Video 6-->
+ 
+          <p>Cart({{cart}})</p>
+          <div>
+            <span v-for="size in sizes" :key="size" class="size-box">{{size}}</span>
+          </div>
+          
+          <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{variant.color}}</div>
+          <button class="button" @click="addToCart">Add to Cart</button>
+          <button class="button" @click="cart -=1">Remove from Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+    <!-- Import Js -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+     <script>
+      const mountApp = app.mount('#app')
+    </script>
+
+  </body>
+</html>
